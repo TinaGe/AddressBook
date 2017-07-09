@@ -37,6 +37,7 @@ public class AddressBooksController {
 	final String folderName = "AddressBookFolder";
 
 	public AddressBooksController() {
+		createFolder();
 		addressBooks = new ArrayList<AddressBookEntity>();
 		addressBooks = loadAddressBooks();
 	}
@@ -215,6 +216,17 @@ public class AddressBooksController {
 		}
 	}
 
+	
+	/**
+	 * create Address Book Folder
+	 */
+	public void createFolder(){
+		File file = new File(folderName);
+		if (!(file.exists() && file.isDirectory())) {
+			file.mkdir();
+		}
+	}
+	
 	public List<AddressBookEntity> getAddressBooks() {
 		return addressBooks;
 	}
