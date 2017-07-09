@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Tina
+ * Bean of Address Book
+ *
+ */
 public class AddressBookEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

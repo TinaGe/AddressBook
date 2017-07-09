@@ -2,6 +2,12 @@ package com.tina.addbook.bean;
 
 import java.io.Serializable;
 
+/**
+ * @author Tina
+ * 
+ * Bean of Contact Entity
+ *
+ */
 public class ContactEntry implements Serializable {
 	
 	private static final long serialVersionUID = 1L; 
