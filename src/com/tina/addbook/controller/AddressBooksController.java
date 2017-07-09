@@ -27,7 +27,7 @@ import com.tina.addbook.bean.ContactEntry;
  *         folder 6. print all contacts from an address book 7. print unique
  *         contacts from selected address books 8. print unique contacts from
  *         all address books under the App folder 9. load all address books into
- *         persist List
+ *         persist List 10. create folder for store address books
  *
  */
 
@@ -123,17 +123,13 @@ public class AddressBooksController {
 		addressBooks = new ArrayList<AddressBookEntity>();
 		List<ContactEntry> contacts = new ArrayList<ContactEntry>();
 		String[] fileNames = loadAddressBooksFiles();
-		//System.out.println("how many files sxist:" + fileNames.length);
 		if (fileNames != null && fileNames.length > 0) {
 			try {
 				ObjectInputStream ObjectInput = null;
 
 				for (String fileName : fileNames) {
-					//System.out.println("fileName:" + fileName);
 					ObjectInput = new ObjectInputStream(new FileInputStream(folderName + "/" + fileName));
 					contacts = (List<ContactEntry>) ObjectInput.readObject();
-					//System.out.println("test null conatcts" + contacts);
-					//System.out.println("contact size:" + contacts.size());
 					addressBooks.add(new AddressBookEntity(fileName, contacts));
 				}
 				ObjectInput.close();
